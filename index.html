@@ -3,877 +3,495 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>News Article | James Nyarango TV</title>
-<meta name="description" content="Read the latest news, politics, business, sports and current affairs from James Nyarango TV.">
-<meta name="theme-color" content="#071a35">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-:root{
---navy:#071a35;
---navy2:#10294b;
---red:#e00016;
---ink:#202124;
---muted:#666d75;
---line:#e5e7eb;
---light:#f5f6f7;
---white:#fff;
+<title>Charakuru - Turn One Illustration Into a 3D Avatar</title>
+<meta name="description" content="Charakuru (きゃらくる) is an AI character modeling kit that turns a single character illustration into a VRM avatar you can share with an AI agent. Download for Windows and get started in minutes.">
+<meta name="keywords" content="Charakuru, きゃらくる, VRM avatar, AI character modeling, illustration to VRM, VRM 1.0, AI agent, Tripo, character modeling kit">
+<meta name="author" content="Charakuru">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/zenyrae123/Charakuru">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charakuru - Turn One Illustration Into a 3D Avatar">
+<meta property="og:description" content="A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent. Sponsored by Tripo.">
+<meta property="og:url" content="https://github.com/zenyrae123/Charakuru">
+<meta property="og:image" content="docs/images/readme-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charakuru - Turn One Illustration Into a 3D Avatar">
+<meta name="twitter:description" content="Turn a single character illustration into a VRM avatar and share the work with an AI agent. Sponsored by Tripo.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Charakuru",
+  "alternateName": "きゃらくる",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.1.0",
+  "description": "A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent.",
+  "url": "https://github.com/zenyrae123/Charakuru",
+  "downloadUrl": "https://github.com/zenyrae123/Charakuru/releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
-
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-background:#fff;
-color:var(--ink);
-font-family:'Jost',Arial,sans-serif;
-font-size:15px;
-line-height:1.55;
--webkit-font-smoothing:antialiased;
-}
-
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-
-/* HEADER */
-
-.top-header{
-background:var(--navy);
-border-bottom:3px solid var(--red);
-}
-
-.header-inner{
-max-width:1400px;
-min-height:88px;
-margin:auto;
-padding:8px 22px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:12px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-flex-shrink:0;
-}
-
-.brand img{
-width:83px;
-height:70px;
-object-fit:contain;
-}
-
-.navigation{
-flex:1 1 auto;
-min-width:0;
-}
-
-.nav-inner{
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:80px;
-overflow-x:auto;
-scrollbar-width:none;
-}
-
-.nav-inner::-webkit-scrollbar{display:none}
-
-.nav-inner a{
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:80px;
-padding:0 10px;
-color:#fff;
-font-size:12px;
-font-weight:800;
-white-space:nowrap;
-border-bottom:3px solid transparent;
-}
-
-.nav-inner a:hover,
-.nav-inner a.active{
-background:#18375e;
-border-bottom-color:var(--red);
-}
-
-.header-actions{
-display:flex;
-align-items:center;
-gap:9px;
-flex-shrink:0;
-}
-
-.search-box{
-display:flex;
-width:155px;
-height:38px;
-background:#fff;
-}
-
-.search-box input{
-width:100%;
-min-width:0;
-border:0;
-outline:0;
-padding:0 10px;
-font-size:12px;
-}
-
-.search-box button{
-width:40px;
-flex-shrink:0;
-border:0;
-background:var(--red);
-color:white;
-cursor:pointer;
-}
-
-.live-button{
-padding:11px 10px;
-background:var(--red);
-color:white;
-font-size:11px;
-font-weight:900;
-white-space:nowrap;
-}
-
-.pulse-dot{
-display:inline-block;
-width:7px;
-height:7px;
-margin-right:6px;
-border-radius:50%;
-background:white;
-animation:pulse 1.4s infinite;
-}
-
-@keyframes pulse{50%{opacity:.3}}
-
-/* ARTICLE PAGE */
-
-.article-main{
-max-width:1100px;
-margin:0 auto;
-padding:30px 24px 55px;
-}
-
-.breadcrumb{
-margin-bottom:18px;
-color:#737b84;
-font-size:12px;
-font-weight:700;
-}
-
-.breadcrumb a:hover{color:var(--red)}
-
-.article-layout{
-max-width:900px;
-margin:auto;
-}
-
-.article{background:#fff}
-
-.category{
-display:block;
-margin-bottom:9px;
-color:var(--red);
-font-size:12px;
-font-weight:900;
-text-transform:uppercase;
-letter-spacing:.6px;
-}
-
-.breaking{
-display:inline-block;
-background:var(--red);
-color:white;
-padding:5px 11px;
-font-size:11px;
-font-weight:900;
-margin:0 0 12px;
-}
-
-.article h1{
-margin:0 0 14px;
-color:#202124;
-font-size:34px;
-font-weight:900;
-line-height:1.2;
-letter-spacing:-.5px;
-}
-
-.subheadline{
-margin:0 0 17px;
-color:#555d65;
-font-size:17px;
-line-height:1.7;
-}
-
-.details{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-align-items:center;
-padding:12px 0;
-margin-bottom:18px;
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
-color:#747b83;
-font-size:12px;
-}
-
-.article-image{
-display:block;
-width:100%;
-max-height:570px;
-object-fit:cover;
-margin:15px 0 25px;
-background:#eceff2;
-}
-
-.story{
-color:#292d32;
-font-size:17px;
-line-height:1.9;
-white-space:pre-wrap;
-overflow-wrap:anywhere;
-}
-
-.article-actions{
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-gap:12px;
-margin-top:30px;
-padding-top:20px;
-border-top:1px solid var(--line);
-}
-
-.back-button,
-.next-button{
-display:inline-block;
-padding:10px 16px;
-background:var(--red);
-color:#fff;
-font-size:11px;
-font-weight:900;
-}
-
-.next-button{background:var(--navy)}
-
-.back-button:hover,
-.next-button:hover{opacity:.88}
-
-.message{
-padding:35px;
-background:#f7f8fa;
-border:1px solid var(--line);
-text-align:center;
-}
-
-.message h2{
-margin:0 0 10px;
-color:var(--navy);
-font-size:23px;
-font-weight:900;
-}
-
-.message p{
-color:#626970;
-font-size:14px;
-}
-
-.message a{
-display:inline-block;
-margin-top:12px;
-padding:10px 16px;
-background:var(--red);
-color:white;
-font-size:11px;
-font-weight:900;
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:50px;
-background:var(--navy);
-color:white;
-border-top:4px solid var(--red);
-}
-
-.footer-inner{
-max-width:1360px;
-margin:auto;
-padding:42px 25px 0;
-}
-
-.footer-columns{
-display:grid;
-grid-template-columns:1.4fr 1fr 1fr 1.2fr;
-gap:35px;
-padding-bottom:35px;
-}
-
-.footer-brand h3{
-margin:0 0 10px;
-font-size:24px;
-font-weight:900;
-}
-
-.footer-tagline{
-color:#ff7782;
-font-size:13px;
-font-weight:900;
-letter-spacing:1px;
-}
-
-.footer-desc{
-max-width:360px;
-margin:15px 0;
-color:#d5dce6;
-font-size:15px;
-line-height:1.85;
-}
-
-.footer-web-link{
-color:white;
-font-size:15px;
-font-weight:700;
-overflow-wrap:anywhere;
-}
-
-.footer-col h4{
-display:inline-block;
-margin:0 0 17px;
-padding-bottom:9px;
-border-bottom:2px solid var(--red);
-font-size:17px;
-font-weight:900;
-}
-
-.footer-col ul{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.footer-col li{
-margin-bottom:12px;
-color:#d5dce6;
-font-size:15px;
-line-height:1.6;
-}
-
-.footer-col a{color:#d5dce6}
-.footer-col a:hover{color:#ff7782}
-
-.footer-contact-note{
-margin-top:12px;
-color:#c4ccd7;
-font-size:14px;
-line-height:1.8;
-}
-
-.copyright-bar{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:12px;
-padding:18px 0;
-border-top:1px solid #29405e;
-color:#d0d7e1;
-font-size:13px;
-}
-
-/* TABLET */
-
-@media(max-width:1150px) and (min-width:761px){
-
-.header-inner{
-gap:7px;
-padding-left:14px;
-padding-right:14px;
-}
-
-.brand img{
-width:72px;
-height:65px;
-}
-
-.nav-inner a{
-padding:0 7px;
-font-size:11px;
-}
-
-.search-box{width:125px}
-
-.header-actions{gap:6px}
-
-.live-button{
-padding:10px 8px;
-font-size:10px;
-}
-
-.footer-columns{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-/* MOBILE */
-
-@media(max-width:760px){
-
-.header-inner{
-padding:9px 14px;
-gap:8px;
-flex-wrap:wrap;
-}
-
-.brand img{
-width:72px;
-height:58px;
-}
-
-.header-actions{
-margin-left:auto;
-}
-
-.search-box{width:165px}
-
-.navigation{
-order:3;
-flex:0 0 100%;
-}
-
-.nav-inner{
-min-height:43px;
-justify-content:flex-start;
-}
-
-.nav-inner a{
-min-height:43px;
-padding:0 12px;
-font-size:11px;
-}
-
-.article-main{
-padding:20px 15px 40px;
-}
-
-.article h1{font-size:27px}
-
-.subheadline{font-size:15px}
-
-.story{font-size:16px}
-
-.footer-columns{
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
-
-}
-
-@media(max-width:520px){
-
-.header-actions{
-width:100%;
-margin:0;
-}
-
-.search-box{flex:1}
-
-.live-button{font-size:10px}
-
-.article-main{padding:18px 15px 35px}
-
-.article h1{font-size:25px}
-
-.article-image{margin:12px 0 20px}
-
-.story{font-size:15px;line-height:1.85}
-
-.footer-columns{grid-template-columns:1fr}
-
-.footer-inner{padding:30px 17px 0}
-
-}
-
-@media(prefers-reduced-motion:reduce){
-.pulse-dot{animation:none}
-html{scroll-behavior:auto}
-}
-</style>
-</head>
-
-<body>
-
-<header class="top-header">
-<div class="header-inner">
-
-<a class="brand" href="./index.html">
-<img src="./JAMO%20LOGO.jpeg" alt="JNTV Logo">
-</a>
-
-<nav class="navigation">
-<div class="nav-inner">
-<a href="./index.html">HOME</a>
-<a href="./latest-news.html">LATEST NEWS</a>
-<a href="./politics.html">POLITICS</a>
-<a href="./business.html">BUSINESS</a>
-<a href="./sports.html">SPORTS</a>
-<a href="./videos.html">VIDEOS</a>
-<a href="./about.html">ABOUT US</a>
-</div>
-</nav>
-
-<div class="header-actions">
-
-<form class="search-box" action="./latest-news.html" method="get">
-<input type="search" name="search" placeholder="Search news..." aria-label="Search news">
-<button type="submit" aria-label="Search">⌕</button>
-</form>
-
-<a href="./latest-news.html" class="live-button">
-<span class="pulse-dot"></span>LATEST NEWS
-</a>
-
-</div>
-</div>
-</header>
-
-<main class="article-main">
-
-<div class="breadcrumb">
-<a href="./index.html">HOME</a> /
-<span id="breadcrumbCategory">LATEST NEWS</span>
-</div>
-
-<div class="article-layout" id="articleContainer">
-<div class="message">
-<h2>LOADING ARTICLE...</h2>
-<p>Please wait while we retrieve this story.</p>
-</div>
-</div>
-
-</main>
-
-<footer class="footer">
-<div class="footer-inner">
-
-<div class="footer-columns">
-
-<div class="footer-brand">
-<h3>JAMES NYARANGO TV</h3>
-<div class="footer-tagline">INFORM • ENTERTAIN • EMPOWER</div>
-
-<p class="footer-desc">
-Your digital broadcast destination for trusted news, current affairs, politics, business, sports and entertainment from Uganda, Africa and around the world. Connecting audiences through journalism, storytelling and digital media.
-</p>
-
-<a href="https://www.jamesnyarangotv.ac.ug" class="footer-web-link">
-www.jamesnyarangotv.ac.ug
-</a>
-</div>
-
-<div class="footer-col">
-<h4>ABOUT JNTV</h4>
-<ul>
-<li><a href="./about.html">About Us</a></li>
-<li><a href="./latest-news.html">Latest News</a></li>
-<li><a href="./videos.html">Our Videos</a></li>
-<li><a href="mailto:info@jamesnyarangotv.ac.ug">Contact Us</a></li>
-<li><a href="#">Advertise With Us</a></li>
-<li><a href="#">Privacy Policy</a></li>
-</ul>
-</div>
-
-<div class="footer-col">
-<h4>CONTACT INFORMATION</h4>
-<ul>
-<li><a href="tel:+256775732004">+256 775 732 004</a></li>
-<li><a href="mailto:info@jamesnyarangotv.ac.ug">info@jamesnyarangotv.ac.ug</a></li>
-<li>Kampala, Uganda</li>
-<li><a href="https://www.jamesnyarangotv.ac.ug">Official Website</a></li>
-</ul>
-
-<div class="footer-contact-note">
-For enquiries, advertising, partnerships and media services, contact the JNTV team.
-</div>
-</div>
-
-<div class="footer-col">
-<h4>OUR SERVICES</h4>
-<ul>
-<li>News and Current Affairs</li>
-<li>Podcasts and Audio Programmes</li>
-<li>Digital Media Production</li>
-<li>Interviews and Talk Shows</li>
-<li>Video Production and Broadcasting</li>
-<li>Live Event Coverage</li>
-<li>Digital Advertising and Marketing</li>
-<li>Sponsored Content and Promotions</li>
-</ul>
-</div>
-
-</div>
-
-<div class="copyright-bar">
-<div>© 2026 James Nyarango TV (JNTV). All rights reserved.</div>
-<div>INFORM • ENTERTAIN • EMPOWER</div>
-</div>
-
-</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-(function(){
-
-"use strict";
-
-const SUPABASE_URL =
-"https://eqogivrposfajrkdwqbq.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_l4sKYCzUW6670QvOMtBE_Q_kRCbwDZ-";
-
-const db=window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
-);
-
-const container=document.getElementById("articleContainer");
-const breadcrumbCategory=document.getElementById("breadcrumbCategory");
-
-function safe(value){
-return String(value??"").replace(/[&<>"']/g,function(c){
-return {
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c];
-});
-}
-
-function getTitle(a){
-return a.title||a.headline||"Untitled News Story";
-}
-
-function getCategory(a){
-return String(a.category||a.section||"Latest News").trim();
-}
-
-function getSummary(a){
-return String(
-a.summary||a.subheadline||a.description||a.excerpt||""
-).replace(/<[^>]*>/g,"").trim();
-}
-
-function getStory(a){
-return String(
-a.content||a.story||a.body||a.article||a.description||""
-);
-}
-
-function getImage(a){
-const value=a.image_url||a.photo||a.image||
-a.imageUrl||a.thumbnail||"";
-
-if(/^https?:\/\//i.test(value)){
-try{
-const url=new URL(value);
-if(url.protocol==="https:"||url.protocol==="http"){
-return url.href;
-}
-}catch(error){}
-}
-
-return "";
-}
-
-function getDate(a){
-const value=a.published_at||a.created_at||a.date;
-
-if(!value)return "JNTV NEWS";
-
-const d=new Date(value);
-
-if(isNaN(d.getTime()))return safe(value);
-
-return d.toLocaleDateString("en-UG",{
-day:"numeric",
-month:"long",
-year:"numeric"
-});
-}
-
-function isBreaking(a){
-return a.breaking===true||
-a.breakin===true||
-String(a.breaking||a.breakin||"").toLowerCase()==="true"||
-String(a.breaking||a.breakin||"")==="1";
-}
-
-function showNotFound(){
-container.innerHTML=`
-<div class="message">
-<h2>ARTICLE NOT FOUND</h2>
-<p>We could not find this published news story.</p>
-<p>Please return to the homepage and select a published article.</p>
-<a href="./index.html">RETURN TO HOMEPAGE</a>
-</div>`;
-}
-
-function renderArticle(article,articles){
-
-const headline=getTitle(article);
-const category=getCategory(article);
-const story=getStory(article);
-const summary=getSummary(article);
-const image=getImage(article);
-const date=getDate(article);
-const author=article.author||article.reporter||"";
-
-breadcrumbCategory.textContent=category.toUpperCase();
-document.title=headline+" | James Nyarango TV";
-
-let imageHTML="";
-
-if(image){
-imageHTML=`
-<img
-class="article-image"
-src="${safe(image)}"
-alt="${safe(headline)}"
-onerror="this.style.display='none'">
-`;
-}
-
-let nextArticle=null;
-
-const currentIndex=articles.findIndex(
-item=>String(item.id)===String(article.id)
-);
-
-if(currentIndex>=0&&currentIndex<articles.length-1){
-nextArticle=articles[currentIndex+1];
-}
-
-const nextButton=nextArticle?`
-<a class="next-button" href="./article.html?id=${encodeURIComponent(nextArticle.id)}">
-READ NEXT: ${safe(getTitle(nextArticle).slice(0,65))} →
-</a>
-`:"";
-
-container.innerHTML=`
-<article class="article">
-
-<span class="category">${safe(category)}</span>
-
-${isBreaking(article)?'<div class="breaking">BREAKING NEWS</div>':''}
-
-<h1>${safe(headline)}</h1>
-
-${summary?`<p class="subheadline">${safe(summary)}</p>`:''}
-
-<div class="details">
-<span>${safe(date)}</span>
-${author?`<span>|</span><span>By ${safe(author)}</span>`:''}
-<span>|</span>
-<span>James Nyarango TV</span>
-</div>
-
-${imageHTML}
-
-<div class="story">${safe(story)}</div>
-
-<div class="article-actions">
-<a class="back-button" href="./index.html">← BACK TO HOMEPAGE</a>
-${nextButton}
-</div>
-
-</article>
-`;
-
-}
-
-async function loadArticle(){
-
-const params=new URLSearchParams(window.location.search);
-const id=params.get("id");
-
-if(!id){
-showNotFound();
-return;
-}
-
-try{
-
-const {data:article,error}=await db
-.from("articles")
-.select("*")
-.eq("id",id)
-.eq("status","published")
-.maybeSingle();
-
-if(error)throw error;
-
-if(!article){
-showNotFound();
-return;
-}
-
-const {data:articles,error:articlesError}=await db
-.from("articles")
-.select("*")
-.eq("status","published")
-.order("published_at",{
-ascending:false,
-nullsFirst:false
-})
-.order("created_at",{
-ascending:false
-});
-
-if(articlesError)throw articlesError;
-
-renderArticle(article,articles||[]);
-
-}catch(error){
-
-console.error("JNTV article error:",error);
-
-container.innerHTML=`
-<div class="message">
-<h2>UNABLE TO LOAD ARTICLE</h2>
-<p>We could not retrieve this story at the moment.</p>
-<p>Please refresh the page or return to the homepage.</p>
-<a href="./index.html">RETURN TO HOMEPAGE</a>
-</div>`;
-
-}
-
-}
-
-loadArticle();
-
-})();
 </script>
+</head>
+<body style="margin:0; padding:0; background:#f7f9fc; color:#1f2937; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;">
+
+<div style="max-width:880px; margin:0 auto; padding:32px 20px 80px 20px;">
+
+  <header style="text-align:center; padding:24px 0 8px 0;">
+    <h1 style="font-size:2.35rem; line-height:1.25; margin:0 0 16px 0; font-weight:800; letter-spacing:-0.02em; color:#0f172a;">🎨 Charakuru - Turn One Drawing Into a 3D Avatar</h1>
+    <p style="font-size:1.15rem; color:#475569; margin:0 auto 28px auto; max-width:640px;">
+      Charakuru (きゃらくる) is a kit for turning one character illustration into a VRM avatar, then sharing the work with an AI agent. Sponsored by Tripo.
+    </p>
+
+    <p style="margin:0 0 28px 0;">
+      <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.1rem; padding:18px 44px; border-radius:14px; box-shadow:0 10px 24px rgba(124,58,237,0.28); letter-spacing:0.01em;">⬇️ Download Charakuru</a>
+    </p>
+
+    <p style="margin:0 0 6px 0; font-size:0.95rem; color:#64748b;">
+      <span style="display:inline-block; background:#e0f2fe; color:#0369a1; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">version 1.1.0</span>
+      <span style="display:inline-block; background:#dcfce7; color:#15803d; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Node.js 22+</span>
+      <span style="display:inline-block; background:#ede9fe; color:#6d28d9; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Output: VRM 1.0</span>
+      <span style="display:inline-block; background:#fef3c7; color:#b45309; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Source-available</span>
+    </p>
+
+    <p style="margin:22px 0 0 0; font-size:0.95rem; color:#64748b;">
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/tutorial.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Tutorial</a> &nbsp;·&nbsp;
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/license.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Terms of Use</a> &nbsp;·&nbsp;
+      <a href="https://discord.gg/tripoai" style="color:#6d28d9; font-weight:600; text-decoration:none;">Discord</a>
+    </p>
+  </header>
+
+  <main>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:36px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">📥 Download and Set Up</h2>
+      <p style="margin:0 0 18px 0;">
+        Charakuru runs on Windows. Visit this link to download the application:
+      </p>
+      <p style="margin:0 0 22px 0;">
+        <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.05rem; padding:15px 36px; border-radius:12px; box-shadow:0 8px 20px rgba(124,58,237,0.25);">⬇️ Go to the Download Page</a>
+      </p>
+      <ol style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:10px;">Open the download page in your browser and pick the newest release at the top of the list.</li>
+        <li style="margin-bottom:10px;">Save the file to a folder you can easily find, such as your Downloads folder.</li>
+        <li style="margin-bottom:10px;">If Windows shows a security prompt, choose the option that lets you keep and open the file.</li>
+        <li style="margin-bottom:0;">Launch Charakuru, then follow the on-screen guide to bring in your first character drawing.</li>
+      </ol>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">✨ What Charakuru Does for You</h2>
+      <p style="margin:0 0 14px 0;">
+        Most 3D avatar tools ask you to learn modeling software, rig a skeleton, and paint weights by hand. Charakuru skips that. You bring one illustration, and the kit walks you through the process of turning it into a finished avatar file that other apps can load.
+      </p>
+      <p style="margin:0 0 14px 0;">
+        The result is a VRM 1.0 avatar — a widely supported 3D character format used in games, streaming setups, and virtual worlds. Because the whole workflow is organized around a single drawing, you spend your time on the look of your character instead of the technical steps behind it.
+      </p>
+      <p style="margin:0;">
+        Charakuru also lets you hand the work off to an AI agent. The kit is built so an agent can pick up the tasks, make the routine decisions, and return an avatar you can review — useful when you have many characters to produce and not much time.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">🚀 Getting Started</h2>
+      <p style="margin:0 0 14px 0;">
+        You do not need any programming knowledge to use Charakuru. The app is organized into a short, guided sequence, and you can pause at any point to check your work.
+      </p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Step 1 — Prepare your illustration</p>
+      <p style="margin:0 0 16px 0;">
+        Use a clear drawing of one character, front-facing, with the whole body inside the frame. A plain background and even lighting help the kit read the shapes correctly. Save the file as a common image format such as PNG.
+      </p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Step 2 — Import it into Charakuru</p>
+      <p style="margin:0 0 16px 0;">
+        Open the app and choose the option to start a new character. Point it at your saved drawing. Charakuru reads the image and prepares a first draft of the avatar.
+      </p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Step 3 — Review and adjust</p>
+      <p style="margin:0 0 16px 0;">
+        Look over the draft. If a feature sits in the wrong place or a color looks off, use the adjustment controls to correct it. Small fixes here save a lot of time later.
+      </p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Step 4 — Export your VRM avatar</p>
+      <p style="margin:0 0 16px 0;">
+        When you are happy with the result, export the avatar. You will get a VRM 1.0 file you can load into any app that supports the format.
+      </p>
+      <p style="margin:0;">
+        The written walkthrough with screenshots lives in the <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/tutorial.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Tutorial</a>. Work through it once and the rest of your characters will go much faster.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">🎨 Key Features</h2>
+      <ul style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:10px;"><strong>One image in, one avatar out.</strong> Start from a single character illustration instead of a stack of reference sheets.</li>
+        <li style="margin-bottom:10px;"><strong>VRM 1.0 output.</strong> Export a standard avatar file that works with the apps and platforms you already use.</li>
+        <li style="margin-bottom:10px;"><strong>Share the work with an AI agent.</strong> Hand routine steps to an agent and review the finished character yourself.</li>
+        <li style="margin-bottom:10px;"><strong>Guided workflow.</strong> The app tells you what to do next, so there is no blank canvas to freeze in front of.</li>
+        <li style="margin-bottom:10px;"><strong>Repeatable results.</strong> Producing a second character is faster than the first because the steps stay the same.</li>
+        <li style="margin-bottom:0;"><strong>Translated documentation.</strong> Guides are available in Japanese, Korean, and Simplified Chinese alongside English.</li>
+      </ul>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">🖥️ System Requirements</h2>
+      <p style="margin:0 0 14px 0;">
+        Check that your computer meets these before you download. Meeting them keeps the avatar preview smooth and avoids long waits.
+      </p>
+      <ul style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:8px;"><strong>Operating system:</strong> Windows 10 or Windows 11, 64-bit</li>
+        <li style="margin-bottom:8px;"><strong>Memory:</strong> 8 GB or more (16 GB recommended for larger characters)</li>
+        <li style="margin-bottom:8px;"><strong>Storage:</strong> about 2 GB of free space for the app and your project files</li>
+        <li style="margin-bottom:8px;"><strong>Graphics:</strong> a modern graphics card with current drivers</li>
+        <li style="margin-bottom:0;"><strong>Also needed:</strong> Node.js 22 or newer, and a stable internet connection for AI agent features</li>
+      </ul>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">🧭 How the Workflow Fits Together</h2>
+      <p style="margin:0 0 14px 0;">
+        Charakuru is not a single button. It is a small set of stages, and each stage hands its result to the next one. Understanding the order helps when something does not look right.
+      </p>
+      <p style="margin:0 0 14px 0;">
+        First, the drawing is read and its shapes are separated from the background. Next, a three-dimensional form is built from those shapes. After that, the character is prepared so it can move and be posed. Finally the file is written out in VRM 1.0 format.
+      </p>
+      <p style="margin:0;">
+        If you work with an AI agent, you can describe what you want at each stage and let the agent handle the routine parts. You still review the output, and you can always step in and change something by hand before the next stage begins.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">❓ Frequently Asked Questions</h2>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Do I need to know 3D modeling?</p>
+      <p style="margin:0 0 16px 0;">No. The kit is designed so that someone with no modeling experience can go from a drawing to an avatar by following the guided steps.</p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">What kind of drawing works best?</p>
+      <p style="margin:0 0 16px 0;">A single character, front-facing, full body, with a simple background. Clean linework and even colors give the most predictable result.</p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">What is a VRM file?</p>
+      <p style="margin:0 0 16px 0;">It is a standard 3D avatar format. Think of it as a common file type, like JPG for images, but for characters that can be posed and animated.</p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">Can I use the avatars I make?</p>
+      <p style="margin:0 0 16px 0;">Charakuru is source-available and comes with its own Terms of Use. Read them before you publish or sell anything you make.</p>
+      <p style="margin:0 0 8px 0; font-weight:600; color:#0f172a;">The download page has several files. Which one do I pick?</p>
+      <p style="margin:0;">Choose the newest release listed at the top of the page. That entry is the current version.</p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">🤝 Community and Support</h2>
+      <p style="margin:0 0 14px 0;">
+        Questions about a character that will not come out right, or a step that does not match the tutorial? The Discord community is the fastest place to get an answer. Other users share their characters and their settings there.
+      </p>
+      <p style="margin:0 0 14px 0;">
+        <a href="https://discord.gg/tripoai" style="display:inline-block; background:#5865f2; color:#ffffff; text-decoration:none; font-weight:700; padding:13px 30px; border-radius:12px; box-shadow:0 6px 16px rgba(88,101,242,0.28);">Join the Discord Server</a>
+      </p>
+      <p style="margin:0;">
+        Bugs and feature requests belong on the repository issue tracker, where they can be tracked and fixed in a future version.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 14px 0; font-weight:700; color:#0f172a;">📄 Terms of Use and License</h2>
+      <p style="margin:0 0 14px 0;">
+        Charakuru is source-available, which means the code can be viewed and studied, but use of the software and of the avatars you create is governed by the project's own terms rather than an open-source license.
+      </p>
+      <p style="margin:0;">
+        Read the full <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/license.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Terms of Use</a> before commercial use or redistribution. Sponsorship for this project is provided by Tripo.
+      </p>
+    </section>
+
+    <section style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); border-radius:18px; padding:<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charakuru - Turn One Illustration Into a VRM Avatar</title>
+<meta name="description" content="Charakuru (きゃらくる) is an AI character modeling kit that turns one character illustration into a VRM avatar you can share with an AI agent. Download for Windows and get started in minutes.">
+<meta name="keywords" content="Charakuru, きゃらくる, VRM avatar, illustration to VRM, AI character modeling, VRM 1.0, AI agent, Tripo, character kit">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/zenyrae123/Charakuru">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charakuru - Turn One Illustration Into a VRM Avatar">
+<meta property="og:description" content="A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent. Sponsored by Tripo.">
+<meta property="og:url" content="https://github.com/zenyrae123/Charakuru">
+<meta property="og:image" content="docs/images/readme-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charakuru - Turn One Illustration Into a VRM Avatar">
+<meta name="twitter:description" content="Turn a single character illustration into a VRM avatar and share the work with an AI agent. Sponsored by Tripo.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Charakuru",
+  "alternateName": "きゃらくる",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.1.0",
+  "description": "A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent.",
+  "url": "https://github.com/zenyrae123/Charakuru",
+  "downloadUrl": "https://github.com/zenyrae123/Charakuru/releases",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body style="margin:0; padding:0; background:#f7f9fc; color:#1f2937; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased;">
+
+<div style="max-width:880px; margin:0 auto; padding:32px 20px 72px 20px;">
+
+  <header style="text-align:center; padding:20px 0 4px 0;">
+    <h1 style="font-size:2.3rem; line-height:1.25; margin:0 0 18px 0; font-weight:800; letter-spacing:-0.02em; color:#0f172a;">🎨 Charakuru - Turn One Drawing Into a 3D Avatar</h1>
+    <p style="font-size:1.12rem; color:#475569; margin:0 auto 30px auto; max-width:660px;">
+      Charakuru (きゃらくる) is a kit for turning one character illustration into a VRM avatar, then sharing the work with an AI agent. Sponsored by Tripo.
+    </p>
+
+    <p style="margin:0 0 26px 0;">
+      <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.1rem; padding:18px 46px; border-radius:14px; box-shadow:0 10px 26px rgba(124,58,237,0.28);">⬇️ Download Charakuru</a>
+    </p>
+
+    <p style="margin:0 0 4px 0;">
+      <span style="display:inline-block; background:#e0f2fe; color:#0369a1; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">version 1.1.0</span>
+      <span style="display:inline-block; background:#dcfce7; color:#15803d; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Node.js 22+</span>
+      <span style="display:inline-block; background:#ede9fe; color:#6d28d9; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Output: VRM 1.0</span>
+      <span style="display:inline-block; background:#fef3c7; color:#b45309; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Source-available</span>
+    </p>
+
+    <p style="margin:22px 0 0 0; font-size:0.95rem; color:#64748b;">
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/tutorial.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Tutorial</a> &nbsp;·&nbsp;
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/license.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Terms of Use</a> &nbsp;·&nbsp;
+      <a href="https://discord.gg/tripoai" style="color:#6d28d9; font-weight:600; text-decoration:none;">Discord</a>
+    </p>
+  </header>
+
+  <main>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:36px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">📥 Download and Set Up</h2>
+      <p style="margin:0 0 18px 0;">
+        Charakuru runs on Windows. Visit this link to download the application:
+      </p>
+      <p style="margin:0 0 24px 0;">
+        <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.05rem; padding:15px 36px; border-radius:12px; box-shadow:0 8px 20px rgba(124,58,237,0.25);">⬇️ Go to the Download Page</a>
+      </p>
+      <ol style="margin:0; padding-left<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charakuru - Turn One Illustration Into a VRM Avatar</title>
+<meta name="description" content="Charakuru (きゃらくる) is an AI character modeling kit that turns one character illustration into a VRM avatar you can share with an AI agent. Download for Windows and start in minutes.">
+<meta name="keywords" content="Charakuru, きゃらくる, VRM avatar, illustration to VRM, AI character modeling, VRM 1.0, AI agent, Tripo, character kit">
+<meta name="author" content="Charakuru">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/zenyrae123/Charakuru">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charakuru - Turn One Illustration Into a VRM Avatar">
+<meta property="og:description" content="A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent. Sponsored by Tripo.">
+<meta property="og:url" content="https://github.com/zenyrae123/Charakuru">
+<meta property="og:image" content="docs/images/readme-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charakuru - Turn One Illustration Into a VRM Avatar">
+<meta name="twitter:description" content="Turn a single character illustration into a VRM avatar and share the work with an AI agent. Sponsored by Tripo.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Charakuru",
+  "alternateName": "きゃらくる",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.1.0",
+  "description": "A kit for turning one character illustration into a VRM avatar, sharing the work with an AI agent.",
+  "url": "https://github.com/zenyrae123/Charakuru",
+  "downloadUrl": "https://github.com/zenyrae123/Charakuru/releases",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body style="margin:0; padding:0; background:#f7f9fc; color:#1f2937; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased;">
+
+<div style="max-width:880px; margin:0 auto; padding:32px 20px 72px 20px;">
+
+  <header style="text-align:center; padding:20px 0 4px 0;">
+    <h1 style="font-size:2.3rem; line-height:1.25; margin:0 0 18px 0; font-weight:800; letter-spacing:-0.02em; color:#0f172a;">🎨 Charakuru - Turn One Drawing Into a 3D Avatar</h1>
+    <p style="font-size:1.12rem; color:#475569; margin:0 auto 30px auto; max-width:660px;">
+      Charakuru (きゃらくる) is a kit for turning one character illustration into a VRM avatar, then sharing the work with an AI agent. Sponsored by Tripo.
+    </p>
+
+    <p style="margin:0 0 26px 0;">
+      <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.1rem; padding:18px 46px; border-radius:14px; box-shadow:0 10px 26px rgba(124,58,237,0.28);">⬇️ Download Charakuru</a>
+    </p>
+
+    <p style="margin:0 0 4px 0;">
+      <span style="display:inline-block; background:#e0f2fe; color:#0369a1; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">version 1.1.0</span>
+      <span style="display:inline-block; background:#dcfce7; color:#15803d; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Node.js 22+</span>
+      <span style="display:inline-block; background:#ede9fe; color:#6d28d9; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Output: VRM 1.0</span>
+      <span style="display:inline-block; background:#fef3c7; color:#b45309; border-radius:999px; padding:5px 14px; margin:4px; font-weight:600; font-size:0.85rem;">Source-available</span>
+    </p>
+
+    <p style="margin:22px 0 0 0; font-size:0.95rem; color:#64748b;">
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/tutorial.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Tutorial</a> &nbsp;·&nbsp;
+      <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/license.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Terms of Use</a> &nbsp;·&nbsp;
+      <a href="https://discord.gg/tripoai" style="color:#6d28d9; font-weight:600; text-decoration:none;">Discord</a>
+    </p>
+  </header>
+
+  <main>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:36px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">📥 Download and Set Up</h2>
+      <p style="margin:0 0 18px 0;">
+        Charakuru runs on Windows. Visit this link to download the application:
+      </p>
+      <p style="margin:0 0 24px 0;">
+        <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.05rem; padding:15px 36px; border-radius:12px; box-shadow:0 8px 20px rgba(124,58,237,0.25);">⬇️ Go to the Download Page</a>
+      </p>
+      <ol style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:12px;">Open the download page in your browser. The newest release sits at the top of the list.</li>
+        <li style="margin-bottom:12px;">Save the file to a folder you can find again easily, such as your Downloads folder.</li>
+        <li style="margin-bottom:12px;">If Windows shows a security prompt, choose the option that lets you keep and open the file.</li>
+        <li style="margin-bottom:0;">Launch Charakuru and follow the on-screen guide to bring in your first character drawing.</li>
+      </ol>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">✨ What Charakuru Does for You</h2>
+      <p style="margin:0 0 16px 0;">
+        Most 3D avatar tools ask you to learn modeling software, build a skeleton, and paint weights by hand. Charakuru skips that. You bring one illustration, and the kit walks you through turning it into a finished avatar file that other apps can load.
+      </p>
+      <p style="margin:0 0 16px 0;">
+        The result is a VRM 1.0 avatar — a widely supported 3D character format used in games, streaming setups, and virtual worlds. Because the whole workflow is organized around a single drawing, your time goes into how your character looks instead of the technical steps behind it.
+      </p>
+      <p style="margin:0;">
+        Charakuru also lets you hand the work to an AI agent. The kit is built so an agent can pick up the tasks, make the routine decisions, and return an avatar for you to review — useful when you have many characters to produce and not much time.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">🚀 Getting Started</h2>
+      <p style="margin:0 0 20px 0;">
+        You do not need any programming knowledge to use Charakuru. The app is organized into a short, guided sequence, and you can pause at any point to check your work.
+      </p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Step 1 — Prepare your illustration</p>
+      <p style="margin:0 0 18px 0;">
+        Use a clear drawing of one character, facing forward, with the whole body inside the frame. A plain background and even lighting help the kit read the shapes correctly. Save the file as a common image format such as PNG.
+      </p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Step 2 — Import it into Charakuru</p>
+      <p style="margin:0 0 18px 0;">
+        Open the app and choose the option to start a new character. Point it at your saved drawing. Charakuru reads the image and prepares a first draft of the avatar.
+      </p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Step 3 — Review and adjust</p>
+      <p style="margin:0 0 18px 0;">
+        Look over the draft. If a feature sits in the wrong place or a color looks off, use the adjustment controls to correct it. Small fixes here save a lot of time later.
+      </p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Step 4 — Export your VRM avatar</p>
+      <p style="margin:0 0 18px 0;">
+        When you are happy with the result, export the avatar. You will get a VRM 1.0 file you can load into any app that supports the format.
+      </p>
+
+      <p style="margin:0;">
+        A written walkthrough with screenshots lives in the <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/tutorial.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Tutorial</a>. Work through it once and the rest of your characters will go much faster.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">🎨 Key Features</h2>
+      <ul style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:12px;"><strong>One image in, one avatar out.</strong> Start from a single character illustration instead of a stack of reference sheets.</li>
+        <li style="margin-bottom:12px;"><strong>VRM 1.0 output.</strong> Export a standard avatar file that works with the apps and platforms you already use.</li>
+        <li style="margin-bottom:12px;"><strong>Share the work with an AI agent.</strong> Hand routine steps to an agent and review the finished character yourself.</li>
+        <li style="margin-bottom:12px;"><strong>Guided workflow.</strong> The app tells you what to do next, so there is no blank canvas to freeze in front of.</li>
+        <li style="margin-bottom:12px;"><strong>Repeatable results.</strong> Making a second character is faster than the first because the steps stay the same.</li>
+        <li style="margin-bottom:0;"><strong>Translated documentation.</strong> Guides are available in Japanese, Korean, and Simplified Chinese alongside English.</li>
+      </ul>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">🖥️ System Requirements</h2>
+      <p style="margin:0 0 16px 0;">
+        Check that your computer meets these before you download. Meeting them keeps the avatar preview smooth and avoids long waits.
+      </p>
+      <ul style="margin:0; padding-left:22px; color:#334155;">
+        <li style="margin-bottom:10px;"><strong>Operating system:</strong> Windows 10 or Windows 11, 64-bit</li>
+        <li style="margin-bottom:10px;"><strong>Memory:</strong> 8 GB or more, with 16 GB recommended for larger characters</li>
+        <li style="margin-bottom:10px;"><strong>Storage:</strong> about 2 GB of free space for the app and your project files</li>
+        <li style="margin-bottom:10px;"><strong>Graphics:</strong> a modern graphics card with current drivers</li>
+        <li style="margin-bottom:0;"><strong>Also needed:</strong> Node.js 22 or newer, and a stable internet connection for AI agent features</li>
+      </ul>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">🧭 How the Workflow Fits Together</h2>
+      <p style="margin:0 0 16px 0;">
+        Charakuru is not a single button. It is a small set of stages, and each stage hands its result to the next one. Knowing the order helps when something does not look right.
+      </p>
+      <p style="margin:0 0 16px 0;">
+        First, the drawing is read and its shapes are separated from the background. Next, a three-dimensional form is built from those shapes. After that, the character is prepared so it can move and be posed. Finally the file is written out in VRM 1.0 format.
+      </p>
+      <p style="margin:0;">
+        If you work with an AI agent, you can describe what you want at each stage and let the agent handle the routine parts. You still review the output, and you can always step in and change something by hand before the next stage begins.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">❓ Frequently Asked Questions</h2>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Do I need to know 3D modeling?</p>
+      <p style="margin:0 0 18px 0;">No. The kit is designed so someone with no modeling experience can go from a drawing to an avatar by following the guided steps.</p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">What kind of drawing works best?</p>
+      <p style="margin:0 0 18px 0;">A single character, facing forward, full body, with a simple background. Clean linework and even colors give the most predictable result.</p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">What is a VRM file?</p>
+      <p style="margin:0 0 18px 0;">It is a standard 3D avatar format. Think of it as a common file type, like JPG for images, but for characters that can be posed and animated.</p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">Can I use the avatars I make?</p>
+      <p style="margin:0 0 18px 0;">Charakuru is source-available and comes with its own Terms of Use. Read them before you publish or sell anything you make.</p>
+
+      <p style="margin:0 0 6px 0; font-weight:700; color:#0f172a;">The download page has several entries. Which one do I pick?</p>
+      <p style="margin:0;">Choose the newest release listed at the top of the page. That entry is the current version.</p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">🤝 Community and Support</h2>
+      <p style="margin:0 0 16px 0;">
+        Questions about a character that will not come out right, or a step that does not match the tutorial? The Discord community is the fastest place to get an answer. Other users share their characters and their settings there.
+      </p>
+      <p style="margin:0 0 16px 0;">
+        <a href="https://discord.gg/tripoai" style="display:inline-block; background:#5865f2; color:#ffffff; text-decoration:none; font-weight:700; padding:13px 30px; border-radius:12px; box-shadow:0 6px 16px rgba(88,101,242,0.28);">Join the Discord Server</a>
+      </p>
+      <p style="margin:0;">
+        Bugs and feature requests belong on the repository issue tracker, where they can be tracked and fixed in a future version.
+      </p>
+    </section>
+
+    <section style="background:#ffffff; border-radius:18px; padding:30px 28px; margin:24px 0 0 0; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <h2 style="font-size:1.5rem; margin:0 0 16px 0; font-weight:700; color:#0f172a;">📄 Terms of Use and License</h2>
+      <p style="margin:0 0 16px 0;">
+        Charakuru is source-available, which means the code can be viewed and studied, but use of the software and of the avatars you create is governed by the project's own terms rather than an open-source license.
+      </p>
+      <p style="margin:0;">
+        Read the full <a href="https://github.com/zenyrae123/Charakuru/blob/main/docs/license.md" style="color:#6d28d9; font-weight:600; text-decoration:none;">Terms of Use</a> before commercial use or redistribution. Sponsorship for this project is provided by Tripo.
+      </p>
+    </section>
+
+    <section style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); border-radius:18px; padding:36px 28px; margin:24px 0 0 0; text-align:center; box-shadow:0 8px 24px rgba(15,23,42,0.18);">
+      <h2 style="font-size:1.5rem; margin:0 0 12px 0; font-weight:700; color:#ffffff;">Ready to bring your character to life?</h2>
+      <p style="margin:0 0 24px 0; color:#cbd5e1;">
+        One illustration is all you need to start.
+      </p>
+      <a href="https://github.com/zenyrae123/Charakuru/releases" style="display:inline-block; background:linear-gradient(135deg,#22d3ee 0%,#a78bfa 100%); color:#ffffff; text-decoration:none; font-weight:700; font-size:1.05rem; padding:16px 40px; border-radius:12px; box-shadow:0 8px 20px rgba(34,211,238,0.3);">⬇️ Download Charakuru Now</a>
+    </section>
+
+  </main>
+
+  <footer style="text-align:center; margin:40px 0 0 0; font-size:0.9rem; color:#94a3b8;">
+    <p style="margin:0 0 8px 0;">Charakuru / きゃらくる · version 1.1.0 · VRM 1.0 output · Sponsored by Tripo</p>
+    <p style="margin:0;">Also available in <a href="https://github.com/zenyrae123/Charakuru/blob/main/README.ja.md" style="color:#6d28d9; text-decoration:none; font-weight:600;">日本語</a>, <a href="https://github.com/zenyrae123/Charakuru/blob/main/README.ko.md" style="color:#6d28d9; text-decoration:none; font-weight:600;">한국어</a>, and <a href="https://github.com/zenyrae123/Charakuru/blob/main/README.zh-CN.md" style="color:#6d28d9; text-decoration:none; font-weight:600;">简体中文</a>.</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
